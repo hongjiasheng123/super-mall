@@ -26,11 +26,11 @@ export default {
 <style scoped>
 .recommend{
   display:flex;
-  width: 100%;
   text-align: center;
   font-size: 12px;
-  padding:10px 0 15px 0;
-  border-bottom:8px solid #eee
+  padding:10px 0 20px;
+  border-bottom:10px solid #eee;
+  background-color: #fff;
 }
 .recommend-item{
   flex: 1;
@@ -38,6 +38,6 @@ export default {
 .recommend-item img{
   width:70px;
   height:70px;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 </style>

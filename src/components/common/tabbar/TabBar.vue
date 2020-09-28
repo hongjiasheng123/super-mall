@@ -14,15 +14,16 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   #tab-bar{
+    height:49px;
     background-color:#f6f6f6;
     display: flex;
     position:fixed;
     left:0;
     right:0;
     bottom:0;
-    box-shadow:0px -2px 10px rgba(100,100,100,.3)
+    box-shadow:0px -1px 1px rgba(100,100,100,.3)
   }
 
   /*.tab-bar-item{

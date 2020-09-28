@@ -26,11 +26,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .goods-item{
   padding-bottom:40px;
-  width:48%;
   position:relative;
+  width:48%;
 }
 .goods-item img{
   width:100%;

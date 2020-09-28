@@ -1,46 +1,14 @@
 <template>
   <div id="home">
     <nav-bar class="home-nav"><div slot="center">购物街</div></nav-bar>
-    <home-swiper :banners="banners"/>
-    <home-recommend-view :recommends="recommends"/>
-    <home-feature/>
-    <tab-control class="tab-control" :titles="['流行','新款','样式']" @tabClick="tabClick"/>
-    <goods-list :goods="showGoods"/>
-
-    <ul>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
-    </ul>
+    <scroll class="content">
+      <home-swiper :banners="banners"/>
+      <home-recommend-view :recommends="recommends"/>
+      <home-feature/>
+      <tab-control class="tab-control" :titles="['流行','新款','样式']" @tabClick="tabClick"/>
+      <goods-list :goods="showGoods"/>
+    </scroll>
+    <back-top/>
   </div>
 </template>
 
@@ -51,9 +19,10 @@ import HomeRecommendView from "./childComps/HomeRecommendView"
 import HomeFeature from "./childComps/HomeFeature"
 import TabControl from "components/content/tabControl/TabControl"
 import GoodsList from "components/content/goods/GoodsList"
+import Scroll from "components/common/scroll/Scroll"
+import BackTop from "components/content/backtop/BackTop"
 
 import {getHomeMultidata , getHomeGoods} from "network/home"
-
 
 export default {
  name:'Home',
@@ -63,7 +32,9 @@ export default {
    HomeRecommendView,
    HomeFeature,
    TabControl,
-   GoodsList
+   GoodsList,
+   Scroll,
+   BackTop
  },
  data(){
    return{
@@ -127,9 +98,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   #home{
     margin-top:44px;
+    height:100vh;
   }
   .home-nav{
     background-color:var(--color-tint);
@@ -143,5 +115,9 @@ export default {
   .tab-control{
     position:sticky;
     top:44px;
+  }
+  .content{
+    height:calc(100% - 93px);
+    overflow: hidden;
   }
 </style>

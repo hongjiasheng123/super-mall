@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* #tab-bar{
     background-color:#f6f6f6;
     display: flex;
@@ -56,6 +56,7 @@ export default {
     flex:1;
     text-align: center;
     height: 49px;
+    font-size:14px;
   }
   .tab-bar-item img{
     height:24px;
